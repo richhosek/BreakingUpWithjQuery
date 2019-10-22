@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Selectors</title>
+</head>
+<body>
+    <div id="jquery-divx">
+        <h1>Change Me</h1>
+        <button>By the power of jQuery!</button>
+    </div>
+
+    <div id="vanilla-divx">
+        <h1>Change Me, Too</h1>
+        <button>By the miracle of Vanilla JavaScript!</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        // Let's start with jQuery
+        // First, add an event handler to the button inside div#jquery-div
+        console.log($("#jquery-div").prop("innerText") || "not found");
+        console.log($("#jquery-div").text() || "not found");
+        console.log($("#jquery-div").html() || "not found");
+        console.log($("#jquery-div").prop("outerHTML") || "not found");
+        $("#jquery-div button").on("click", event => {
+            // then, change the text of the h1 element
+            $("#jquery-div h1").text("Presto, Change-o!")
+        });
+
+        // Now, let's do the same with Vanilla JavaScript
+        console.log(document.querySelector("#vanilla-div").innerText || "not found");
+        console.log(document.querySelector("#vanilla-div").textContent || "not found");
+        console.log(document.querySelector("#vanilla-div").innerHTML || "not found");
+        console.log(document.querySelector("#vanilla-div").outerHTML || "not found");
+        document.querySelector("#vanilla-div button").addEventListener("click", event => {
+            document.querySelector("#vanilla-div h1").innerText = "I can do that, too!"
+        });
+    </script>
+</body>
+</html>
