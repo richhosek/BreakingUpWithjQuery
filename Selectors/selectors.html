@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Selectors</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        // Let's start with jQuery
+        let myjQueryListItems = $("#myList li");
+        console.log(myjQueryListItems.text());
+        let myVanillaListItems = document.querySelectorAll("#myList2 li");
+        myVanillaListItems.forEach(node => console.log(node.innerText));
+        for(const node of myVanillaListItems) {
+            console.log(node.innerText);
+        }
+        console.log([...myVanillaListItems].map(li => li.innerText).join())
+        const lostNode = document.querySelector("#noSuchId");
+        console.log(lostNode.innerText); // throws an error,
+    </script>
+</body>
+</html>

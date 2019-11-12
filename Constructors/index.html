@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Constructors</title>
+</head>
+<body>
+         <label><input type="checkbox" name="likesjQuery"> I like jQuery</label>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            const dateDropDown = document.createElement("select");
+            dateDropDown.setAttribute("name", "ccyear");
+            dateDropDown.classList.add("form-control");
+            
+            // let dateDropDown = $("<select>").attr("name", "ccyear").addClass("form-control");
+            const currentYear = new Date().getFullYear();
+            for (let year = currentYear; year < currentYear + 10; year++){
+                // let option = $("<option>").val(year).text(year);
+                let option = document.createElement("option");
+                option.value = year;
+                option.innerText = year;
+                dateDropDown.append(option);
+            }
+            dateDropDown.value = 2025;
+            // $("option[value='2025']").prop("selected", "selected");
+            // $("body").prepend(dateDropDown);
+            document.querySelector("body").append(dateDropDown)
+            // document.querySelector("body").prepend(dateDropDown);
+            // $("[name='likesjQuery']").prop("checked", true);
+            // document.querySelector("[name='likesjQuery']").checked = false;
+            // $("<input type='checkbox' checked>").prependTo("body");
+
+        </script>
+    
+</body>
+</html>

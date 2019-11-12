@@ -7,17 +7,21 @@
     <title>jQuery Selectors</title>
 </head>
 <body>
-    <div id="jquery-divx">
+    <div id="jquery-div">
         <h1>Change Me</h1>
         <button>By the power of jQuery!</button>
     </div>
 
-    <div id="vanilla-divx">
+    <div id="vanilla-div">
         <h1>Change Me, Too</h1>
         <button>By the miracle of Vanilla JavaScript!</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
+
+        let myOtherVanillaHeader = document.getElementById("vanilla-div").getElementsByTagName("h1")[0];
+        console.log("getElement", myOtherVanillaHeader);
+
         // Let's start with jQuery
         // First, add an event handler to the button inside div#jquery-div
         console.log($("#jquery-div").prop("innerText") || "not found");
